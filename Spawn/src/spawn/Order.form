@@ -175,7 +175,18 @@
                 <Column editable="true" title="Model Name" type="java.lang.Object"/>
                 <Column editable="true" title="Model Type" type="java.lang.Object"/>
                 <Column editable="true" title="QTY" type="java.lang.Object"/>
-                <Column editable="true" title="Rate" type="java.lang.Object"/>
+                <Column editable="true" title="Rate" type="java.lang.Object">
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value=""/>
+                  <Data value="null"/>
+                </Column>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
