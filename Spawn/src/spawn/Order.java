@@ -66,7 +66,7 @@ public class Order extends javax.swing.JFrame {
         dateLabel.setText("Date");
         getContentPane().add(dateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(704, 20, 30, 20));
 
-        addItemButton.setText("Add Item");
+        addItemButton.setText("addItem");
         addItemButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addItemButtonActionPerformed(evt);
