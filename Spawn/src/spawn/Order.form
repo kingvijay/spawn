@@ -63,7 +63,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="addItemButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add Item"/>
+        <Property name="text" type="java.lang.String" value="addItem"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addItemButtonActionPerformed"/>
