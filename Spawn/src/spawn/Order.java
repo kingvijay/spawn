@@ -29,22 +29,22 @@ public class Order extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
+        dateLabel = new javax.swing.JLabel();
+        addItemButton = new javax.swing.JButton();
+        displayDate = new javax.swing.JTextField();
+        nameLabel = new javax.swing.JLabel();
+        addressLabel = new javax.swing.JLabel();
+        cityLabel = new javax.swing.JLabel();
+        mobileLabel = new javax.swing.JLabel();
+        nameText = new javax.swing.JTextField();
+        searchBox = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jTextField28 = new javax.swing.JTextField();
-        jTextField30 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        orderTable = new javax.swing.JTable();
+        addressText = new javax.swing.JTextField();
+        mobileText = new javax.swing.JTextField();
+        cityText = new javax.swing.JTextField();
+        nextButton = new javax.swing.JButton();
+        selectDropdown = new javax.swing.JComboBox<>();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -62,56 +62,56 @@ public class Order extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
-        jLabel2.setText("Date");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(704, 20, 30, 20));
+        dateLabel.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
+        dateLabel.setText("Date");
+        getContentPane().add(dateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(704, 20, 30, 20));
 
-        jButton1.setText("Add Item");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        addItemButton.setText("Add Item");
+        addItemButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                addItemButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 15, -1, -1));
+        getContentPane().add(addItemButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 15, -1, -1));
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        displayDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                displayDateActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, 73, -1));
+        getContentPane().add(displayDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, 73, -1));
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel10.setText("Name");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, 20));
+        nameLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        nameLabel.setText("Name");
+        getContentPane().add(nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, 20));
 
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel11.setText("Address");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, -1));
+        addressLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        addressLabel.setText("Address");
+        getContentPane().add(addressLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel12.setText("City");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
+        cityLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cityLabel.setText("City");
+        getContentPane().add(cityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
 
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel14.setText("Mobile");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, -1));
+        mobileLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        mobileLabel.setText("Mobile");
+        getContentPane().add(mobileLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, -1));
 
-        jTextField22.addActionListener(new java.awt.event.ActionListener() {
+        nameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField22ActionPerformed(evt);
+                nameTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 300, -1));
+        getContentPane().add(nameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 300, -1));
 
-        jTextField8.addKeyListener(new java.awt.event.KeyAdapter() {
+        searchBox.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField8KeyPressed(evt);
+                searchBoxKeyPressed(evt);
             }
         });
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 15, 156, 23));
+        getContentPane().add(searchBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 15, 156, 23));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -128,67 +128,67 @@ public class Order extends javax.swing.JFrame {
                 "Sr. No.", "Model Name", "Model Type", "QTY", "Rate"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(orderTable);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 110, 780, 188));
 
-        jTextField28.addActionListener(new java.awt.event.ActionListener() {
+        addressText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField28ActionPerformed(evt);
+                addressTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 300, -1));
+        getContentPane().add(addressText, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 300, -1));
 
-        jTextField30.addActionListener(new java.awt.event.ActionListener() {
+        mobileText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField30ActionPerformed(evt);
+                mobileTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 300, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 300, -1));
+        getContentPane().add(mobileText, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 300, -1));
+        getContentPane().add(cityText, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 300, -1));
 
-        jButton2.setLabel("NEXT");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 520, -1, -1));
+        nextButton.setLabel("NEXT");
+        getContentPane().add(nextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 520, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Cash", "Cheqe" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        selectDropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Cash", "Cheqe" }));
+        selectDropdown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                selectDropdownActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 90, 30));
+        getContentPane().add(selectDropdown, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 90, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
+    private void nameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField22ActionPerformed
+    }//GEN-LAST:event_nameTextActionPerformed
 
-    private void jTextField28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField28ActionPerformed
+    private void addressTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField28ActionPerformed
+    }//GEN-LAST:event_addressTextActionPerformed
 
-    private void jTextField30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField30ActionPerformed
+    private void mobileTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mobileTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField30ActionPerformed
+    }//GEN-LAST:event_mobileTextActionPerformed
 
-    private void jTextField8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyPressed
+    private void searchBoxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBoxKeyPressed
         // TODO add your handling code here
         
-    }//GEN-LAST:event_jTextField8KeyPressed
+    }//GEN-LAST:event_searchBoxKeyPressed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void displayDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayDateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_displayDateActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void addItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_addItemButtonActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void selectDropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectDropdownActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_selectDropdownActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,23 +227,23 @@ public class Order extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton addItemButton;
+    private javax.swing.JLabel addressLabel;
+    private javax.swing.JTextField addressText;
+    private javax.swing.JLabel cityLabel;
+    private javax.swing.JTextField cityText;
+    private javax.swing.JLabel dateLabel;
+    private javax.swing.JTextField displayDate;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JLabel mobileLabel;
+    private javax.swing.JTextField mobileText;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField nameText;
+    private javax.swing.JButton nextButton;
+    private javax.swing.JTable orderTable;
+    private javax.swing.JTextField searchBox;
+    private javax.swing.JComboBox<String> selectDropdown;
     // End of variables declaration//GEN-END:variables
 }
