@@ -24,7 +24,7 @@ public class Conn {
         Class.forName("com.mysql.jdbc.Driver");  
   
     con=DriverManager.getConnection(  
-"jdbc:mysql://localhost:3306/rudhra","root","Spawn@123");
+"jdbc:mysql://localhost:3306/rudhrahardware","root","Spawn@123");
         }catch(Exception e){
             JOptionPane.showMessageDialog (null, e.toString(), "Error", JOptionPane.ERROR_MESSAGE);
         }

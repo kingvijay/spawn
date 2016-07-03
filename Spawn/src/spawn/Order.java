@@ -4,12 +4,32 @@
  * and open the template in the editor.
  */
 package spawn;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Sagar
  */
+
+
+
 public class Order extends javax.swing.JFrame {
+public static Conn conn = null;
+public static Connection newsession = null;
+
+
+static {
+    conn = new Conn();
+    newsession = conn.openConnection();
+     
+}
 
     /**
      * Creates new form Ordpage
@@ -175,7 +195,23 @@ public class Order extends javax.swing.JFrame {
 
     private void searchBoxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBoxKeyPressed
         // TODO add your handling code here
+        String SearchQuery = "select name+','+size+','+Finish as First from Model;";
         
+    try {
+        Statement st;
+        ArrayList<String> list = new ArrayList<>();
+            st = newsession.createStatement();
+            ResultSet rs = st.executeQuery(SearchQuery);
+            while(rs.next())
+            {
+                list.add(rs.getString("First"));
+            }
+    } catch (SQLException ex) {
+        Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    
+    
+                
     }//GEN-LAST:event_searchBoxKeyPressed
 
     private void displayDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayDateActionPerformed
@@ -222,6 +258,7 @@ public class Order extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Order().setVisible(true);
+                
             }
         });
     }
