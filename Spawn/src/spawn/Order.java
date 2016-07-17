@@ -1,15 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+gs1001 * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package spawn;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -87,6 +89,11 @@ static {
         getContentPane().add(dateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(704, 20, 30, 20));
 
         addItemButton.setText("addItem");
+        addItemButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addItemButtonMouseClicked(evt);
+            }
+        });
         addItemButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addItemButtonActionPerformed(evt);
@@ -124,9 +131,17 @@ static {
         });
         getContentPane().add(nameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 300, -1));
 
+        searchBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBoxActionPerformed(evt);
+            }
+        });
         searchBox.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 searchBoxKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchBoxKeyReleased(evt);
             }
         });
         getContentPane().add(searchBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 15, 156, 23));
@@ -195,20 +210,33 @@ static {
 
     private void searchBoxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBoxKeyPressed
         // TODO add your handling code here
-        String SearchQuery = "select name+','+size+','+Finish as First from Model;";
         
-    try {
+        String SearchQuery = "select concat(name,',',size,',',Finish) as First_Type,"
+                + "name, size, finish from rudhrahardware.model;";
+        if(searchBox.getText().length()>=6){
+        try {
         Statement st;
-        ArrayList<String> list = new ArrayList<>();
+        
             st = newsession.createStatement();
             ResultSet rs = st.executeQuery(SearchQuery);
             while(rs.next())
             {
-                list.add(rs.getString("First"));
+                list.add(rs.getString("First_type"));
+                name.add(rs.getString("name"));
+                size.add(rs.getString("size"));  
+                finish.add(rs.getString("finish"));        
             }
     } catch (SQLException ex) {
         Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
     }
+                
+}    //    else {list = null;}
+         AutoSuggestor autotext = new AutoSuggestor(searchBox, this, list, Color.WHITE.brighter(), Color.BLUE, Color.RED, 0.75f)
+        {
+         //@Override
+         
+        };
+
     
     
                 
@@ -225,6 +253,56 @@ static {
     private void selectDropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectDropdownActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_selectDropdownActionPerformed
+
+    private void searchBoxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBoxKeyReleased
+//    String fetchquery="Select Name+','+size+','+Finish+','+MID From rudhrahardware.model where name like ";
+  //      if (searchBox.getText().length()>=7){
+   //     fetchquery=fetchquery+searchBox.getText()+";";
+   //    
+   // }// TODO add your handling code here:
+    }//GEN-LAST:event_searchBoxKeyReleased
+
+    private void searchBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchBoxActionPerformed
+
+    private void addItemButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addItemButtonMouseClicked
+        // TODO add your handling code here:
+        String searchstring = searchBox.getText();
+        String names[];
+        String word1, word2, word3;
+        names = searchstring.split(",");
+        word1 = names[0];
+        word2 = names[1];
+        word3 = names[2];
+        String name, size, finish, packing;
+        name="";
+        size="";
+        finish="";
+        packing="";
+        String searchquery = "Select name, size, finish, packing from rudhrahardware.model where name='"+word1+"' and size="+word2+" and finish='"+word3+"';";
+               
+        try {
+        Statement st;
+        
+            st = newsession.createStatement();
+            ResultSet rs = st.executeQuery(searchquery);
+            while(rs.next())
+            {
+                name=rs.getString("name");
+                size=rs.getString("size");
+                finish=rs.getString("finish");  
+                packing=rs.getString("packing");        
+            }
+    } catch (SQLException ex) {
+        Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
+    } 
+        
+    orderTable.getModel().setValueAt(name,0,1);
+    orderTable.getModel().setValueAt(size,0,2);
+    orderTable.getModel().setValueAt(finish,0,3);
+    orderTable.getModel().setValueAt(packing,0,4);
+    }//GEN-LAST:event_addItemButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -262,7 +340,11 @@ static {
             }
         });
     }
-
+        static ArrayList<String> list = new ArrayList<>();
+        static ArrayList<String> name = new ArrayList<>();
+        static ArrayList<String> size = new ArrayList<>();
+        static ArrayList<String> finish = new ArrayList<>();
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addItemButton;
     private javax.swing.JLabel addressLabel;

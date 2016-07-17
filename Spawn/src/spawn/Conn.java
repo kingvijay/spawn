@@ -7,6 +7,7 @@ package spawn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -37,5 +38,9 @@ public class Conn {
         }catch(Exception e){
             JOptionPane.showMessageDialog (null, e.toString(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    Statement createStatement() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
