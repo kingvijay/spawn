@@ -29,6 +29,7 @@ CREATE TABLE `model` (
   `Finish` varchar(50) DEFAULT NULL,
   `ProdKey` int(11) DEFAULT NULL,
   `StockAvail` int(11) DEFAULT NULL,
+  `ModelType` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`MID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
